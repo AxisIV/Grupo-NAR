@@ -1,24 +1,6 @@
 <template>
   <!--begin::Tables Widget 11-->
-  <div :class="widgetClasses" class="card">
-    <!--begin::Header-->
-    <div class="card-header border-0 pt-5">
-      <h3 class="card-title align-items-start flex-column">
-        <span class="card-label fw-bold fs-3 mb-1">New Arrivals</span>
-
-        <span class="text-muted mt-1 fw-semibold fs-7"
-          >Over 500 new products</span
-        >
-      </h3>
-      <div class="card-toolbar">
-        <a href="#" class="btn btn-sm btn-light-primary">
-          <KTIcon icon-name="plus" icon-class="fs-2" />
-          New Member
-        </a>
-      </div>
-    </div>
-    <!--end::Header-->
-
+  <div class="card container">
     <!--begin::Body-->
     <div class="card-body py-3">
       <!--begin::Table container-->
@@ -28,10 +10,10 @@
           <!--begin::Table head-->
           <thead>
             <tr class="fw-bold text-muted bg-light">
-              <th class="ps-4 min-w-325px rounded-start">Product</th>
-              <th class="min-w-125px">Price</th>
-              <th class="min-w-125px">Deposit</th>
-              <th class="min-w-200px">Agent</th>
+              <th class="ps-4 min-w-325px rounded-start">Folio</th>
+              <th class="min-w-125px">Persona</th>
+              <th class="min-w-125px">Fecha Inicio</th>
+              <th class="min-w-200px">Último cambio</th>
               <th class="min-w-150px">Status</th>
               <th class="min-w-200px text-end rounded-end"></th>
             </tr>
@@ -44,16 +26,17 @@
               <tr>
                 <td>
                   <div class="d-flex align-items-center">
-                    <div class="symbol symbol-50px me-5">
-                      <img :src="item.product.image" class="" alt="" />
-                    </div>
-
                     <div class="d-flex justify-content-start flex-column">
-                      <a
-                        href="#"
-                        class="text-gray-900 fw-bold text-hover-primary mb-1 fs-6"
-                        >{{ item.product.name }}</a
+                      <router-link
+                        to="/TransaccionesDetails"
+                        active-class="active"
+                        class="menu-link"
                       >
+                        <span
+                          class="text-gray-900 fw-bold text-hover-primary mb-1 fs-6"
+                          >{{ item.product.name }}</span
+                        >
+                      </router-link>
                       <span
                         class="text-muted fw-semibold text-muted d-block fs-7"
                         >{{ item.product.specs }}</span
@@ -68,9 +51,6 @@
                     class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6"
                     >{{ item.price }}</a
                   >
-                  <span class="text-muted fw-semibold text-muted d-block fs-7"
-                    >Paid</span
-                  >
                 </td>
 
                 <td>
@@ -79,9 +59,6 @@
                     class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6"
                     >{{ item.deposit }}</a
                   >
-                  <span class="text-muted fw-semibold text-muted d-block fs-7"
-                    >Rejected</span
-                  >
                 </td>
 
                 <td>
@@ -89,10 +66,6 @@
                     href="#"
                     class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6"
                     >{{ item.agent.name }}</a
-                  >
-                  <span
-                    class="text-muted fw-semibold text-muted d-block fs-7"
-                    >{{ item.agent.position }}</span
                   >
                 </td>
 
@@ -107,14 +80,7 @@
                   >
                 </td>
 
-                <td class="text-end">
-                  <a
-                    href="#"
-                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                  >
-                    <KTIcon icon-name="switch" icon-class="fs-3" />
-                  </a>
-
+                <td class="col-1">
                   <a
                     href="#"
                     class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
@@ -157,15 +123,13 @@ export default defineComponent({
     const list = [
       {
         product: {
-          image: getAssetPath("media/stock/600x400/img-26.jpg"),
-          name: "Sant Extreanet Solution",
-          specs: "HTML, JS, ReactJS",
+          name: "#1234",
+          specs: "Juan del Toro",
         },
-        price: "$2,790",
-        deposit: "$520",
+        price: "Fisica",
+        deposit: "12/05/2024",
         agent: {
-          name: "Bradly Beal",
-          position: "Insurance",
+          name: "14/05/2024",
         },
         status: {
           label: "Approved",
@@ -174,70 +138,17 @@ export default defineComponent({
       },
       {
         product: {
-          image: getAssetPath("media/stock/600x400/img-3.jpg"),
-          name: "Telegram Development",
-          specs: "C#, ASP.NET, MS SQL",
+          name: "#0457",
+          specs: "Carlos Slim",
         },
-        price: "$4,790",
-        deposit: "$240",
+        price: "Moral",
+        deposit: "22/04/2024",
         agent: {
-          name: "Chris Thompson",
-          position: "NBA Player",
+          name: "05/05/2024",
         },
         status: {
           label: "In Progress",
           color: "danger",
-        },
-      },
-      {
-        product: {
-          image: getAssetPath("media/stock/600x400/img-9.jpg"),
-          name: "Payroll Application",
-          specs: "PHP, Laravel, VueJS",
-        },
-        price: "$4,390",
-        deposit: "$593",
-        agent: {
-          name: "Zoey McGee",
-          position: "Ruby Developer",
-        },
-        status: {
-          label: "Success",
-          color: "success",
-        },
-      },
-      {
-        product: {
-          image: getAssetPath("media/stock/600x400/img-18.jpg"),
-          name: "HR Management System",
-          specs: "Python, PostgreSQL, ReactJS",
-        },
-        price: "$7,990",
-        deposit: "$980",
-        agent: {
-          name: "Brandon Ingram",
-          position: "Insurance",
-        },
-        status: {
-          label: "Rejected",
-          color: "info",
-        },
-      },
-      {
-        product: {
-          image: getAssetPath("media/stock/600x400/img-8.jpg"),
-          name: "Telegram Mobile",
-          specs: "HTML, JS, ReactJS",
-        },
-        price: "$5,790",
-        deposit: "$750",
-        agent: {
-          name: "Natali Trump",
-          position: "Insurance",
-        },
-        status: {
-          label: "Approved",
-          color: "warning",
         },
       },
     ];
