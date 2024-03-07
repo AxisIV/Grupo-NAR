@@ -65,6 +65,13 @@
           </router-link>
         </div>
         <!--end::Menu item-->
+        <!--begin::Menu item-->
+        <div class="menu-item">
+          <router-link to="/Plantillas" active-class="active" class="menu-link">
+            <span class="menu-title">Plantillas</span>
+          </router-link>
+        </div>
+        <!--end::Menu item-->
       </div>
       <!--end::Menu-->
     </div>

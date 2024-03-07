@@ -24,6 +24,15 @@ const routes: Array<RouteRecordRaw> = [
           breadcrumbs: ["Dashboards"],
         },
       },
+      {
+        path: "/Plantillas",
+        name: "Plantillas",
+        component: () => import("@/views/Plantillas/Plantillas.vue"),
+        meta: {
+          pageTitle: "Plantillas",
+          breadcrumbs: ["Plantillas"],
+        },
+      },
     ],
   },
   {
@@ -99,6 +108,7 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
+
   {
     path: "/",
     component: () => import("@/layouts/SystemLayout.vue"),
