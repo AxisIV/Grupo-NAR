@@ -91,10 +91,19 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "/Transacciones",
         name: "Transacciones",
-        component: () => import("@/views/Transacciones.vue"),
+        component: () => import("@/views/Transacciones/Transacciones.vue"),
         meta: {
           pageTitle: "Transacciones",
           breadcrumbs: ["Transacciones"],
+        },
+      },
+      {
+        path: "/TransaccionesDetails",
+        name: "TransaccionesDetalles",
+        component: () => import("@/views/Transacciones/DetailTransaccion.vue"),
+        meta: {
+          pageTitle: "DetallesTransacciones",
+          breadcrumbs: ["DetallesTransacciones"],
         },
       },
     ],
