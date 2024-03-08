@@ -190,13 +190,7 @@
         class="menu-item menu-lg-down-accordion me-lg-1"
       >
         <span class="menu-link py-3">
-          <router-link
-            to="/Transacciones"
-            active-class="active"
-            class="menu-link"
-          >
-            <span class="menu-title">Transacciones</span>
-          </router-link>
+          <span class="menu-title">Transacciones</span>
           <span class="menu-arrow d-lg-none"></span>
         </span>
         <div
@@ -209,12 +203,28 @@
             <div class="col-lg-4 border-left-lg-1">
               <div class="menu-inline menu-column menu-active-bg">
                 <div class="menu-item">
-                  <a href="#" class="menu-link">
+                  <router-link
+                    to="/Transacciones"
+                    :class="{ active: $route.path === '/Transacciones' }"
+                    class="menu-link"
+                  >
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">{{ translate("Tipos") }}</span>
-                  </a>
+                    <span class="menu-title">Info</span>
+                  </router-link>
+                </div>
+                <div class="menu-item">
+                  <router-link
+                    to="/TransaccionesTipos"
+                    :class="{ active: $route.path === '/TransaccionesTipos' }"
+                    class="menu-link"
+                  >
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot"></span>
+                    </span>
+                    <span class="menu-title">Tipos</span>
+                  </router-link>
                 </div>
                 <div class="menu-item">
                   <a href="#" class="menu-link">

@@ -115,6 +115,15 @@ const routes: Array<RouteRecordRaw> = [
           breadcrumbs: ["DetallesTransacciones"],
         },
       },
+      {
+        path: "/TransaccionesTipos",
+        name: "TransaccionesTipos",
+        component: () => import("@/views/Transacciones/TiposTransaccion.vue"),
+        meta: {
+          pageTitle: "TiposTransacciones",
+          breadcrumbs: ["TiposTransacciones"],
+        },
+      },
     ],
   },
 
