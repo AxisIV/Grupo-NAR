@@ -16,7 +16,10 @@
         title="Transaccion 1"
         date="Moral"
         budget="Fisica"
-      ></KTCard>
+      >
+        <!-- Agregar el modal dentro de la tarjeta -->
+        <KTModalCard buttonText="Ver Pasos" modalId="modal1" />
+      </KTCard>
     </div>
     <!--end::Col-->
 
@@ -27,7 +30,10 @@
         title="Transaccion 2"
         date="Moral"
         budget="Fisica"
-      ></KTCard>
+      >
+        <!-- Agregar el modal dentro de la tarjeta -->
+        <KTModalCard buttonText="Ver Pasos" modalId="modal2"></KTModalCard>
+      </KTCard>
     </div>
     <!--end::Col-->
 
@@ -38,26 +44,25 @@
         title="Transaccion 3"
         date="Moral"
         budget="Fisica"
-      ></KTCard>
+      >
+        <!-- Agregar el modal dentro de la tarjeta -->
+        <KTModalCard buttonText="Ver Pasos" modalId="modal3" />
+      </KTCard>
     </div>
     <!--end::Col-->
   </div>
 </template>
 
 <script lang="ts">
-import { getAssetPath } from "@/core/helpers/assets";
 import { defineComponent } from "vue";
 import KTCard from "@/components/cards/Card1.vue";
+import KTModalCard from "@/components/cards/Card.vue";
 
 export default defineComponent({
   name: "profile-projects",
   components: {
     KTCard,
-  },
-  setup() {
-    return {
-      getAssetPath,
-    };
+    KTModalCard,
   },
 });
 </script>

@@ -11,7 +11,7 @@
           <div class="col-md-5">
             <img
               src="https://img.freepik.com/vector-premium/concepto-prueba-caracter-personas-que-responden-lista-verificacion-cuestionarios-resumen-resultados-exito-examen-linea-formulario-cuestionario-educacion-linea-metafora-encuesta_269730-429.jpg"
-              class="img-fluid img-thumbnai text-center"
+              class="img-fluid img-thumbnail text-center"
               style="width: 24rem; height: 24rem; object-fit: cover"
             />
           </div>
@@ -32,23 +32,23 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-5">
       <form @submit.prevent="submitResponse">
-        <div class="card mt-12 p-8">
+        <div class="card p-4">
           <label
             :for="'question-' + index"
-            class="fs-3 mb-2"
+            class="fs-5 mb-2"
             style="font-weight: 500"
-            >pregunta</label
+            >Pregunta</label
           >
           <input
             type="text"
-            class="form-input"
+            class="form-control form-input"
             placeholder="Ingrese su respuesta"
           />
         </div>
-        <div class="mt-12 d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary">
+        <div class="mt-4 d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-lg">
             Enviar Respuestas
           </button>
         </div>
@@ -59,17 +59,15 @@
 
 <style scoped>
 .form-input {
-  width: calc(100% - 40px); /* Restar el ancho del botón de eliminar */
-  padding: 8px;
+  padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  outline: none; /* Remueve el borde de foco predeterminado */
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Suaviza la transición de bordes y sombras */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .form-input:focus {
-  border-color: #66afe9; /* Cambia el color del borde al enfocar */
-  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Agrega un sombreado sutil */
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
 }
 </style>
