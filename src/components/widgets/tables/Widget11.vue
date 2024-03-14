@@ -1,6 +1,6 @@
 <template>
   <!--begin::Tables Widget 11-->
-  <div class="card container">
+  <div class="card">
     <!--begin::Body-->
     <div class="card-body py-3">
       <!--begin::Table container-->
@@ -10,12 +10,12 @@
           <!--begin::Table head-->
           <thead>
             <tr class="fw-bold text-muted bg-light">
-              <th class="ps-4 min-w-325px rounded-start">Folio</th>
+              <th class="ps-4 min-w-125px rounded-start">Folio</th>
               <th class="min-w-125px">Persona</th>
               <th class="min-w-125px">Fecha Inicio</th>
               <th class="min-w-200px">Último cambio</th>
               <th class="min-w-150px">Status</th>
-              <th class="min-w-200px text-end rounded-end"></th>
+              <th class="min-w-200px">Acciones</th>
             </tr>
           </thead>
           <!--end::Table head-->
