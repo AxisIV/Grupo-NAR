@@ -1,9 +1,32 @@
 <template>
   <!--begin::Card-->
   <div class="card border border-2 border-gray-300 border-hover">
-    <div class="card-header">
-      <span class="fs-3 fw-semibold my-2">{{ title }}</span>
+    <div class="row">
+      <div class="col-md-7 card-header">
+        <span class="fs-3 fw-semibold my-2">{{ title }}</span>
+      </div>
+      <div class="col-md-5">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          style="
+            --bs-btn-padding-y: 0.25rem;
+            --bs-btn-padding-x: 0.5rem;
+            --bs-btn-font-size: 0.75rem;
+          "
+        >
+          Ver
+        </button>
+        <!-- Usar el componente Modal -->
+        <Modal :modalId="modalId" :title="modalTitle">
+          <!-- Contenido del modal -->
+          <p>Contenido del modal aquí...</p>
+        </Modal>
+      </div>
     </div>
+
     <!--end::Name-->
 
     <!--begin::Description-->
@@ -47,10 +70,11 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
+import Modal from "../../views/Modals/MyModal.vue";
 
 export default defineComponent({
   name: "card-1",
-  components: {},
+  components: { Modal },
   props: {
     status: String,
 
@@ -61,6 +85,21 @@ export default defineComponent({
     date: String,
 
     budget: String,
+  },
+  data() {
+    return {
+      modalId: "exampleModal", // ID del modal
+      modalTitle: "Ejemplo de modal", // Título del modal
+    };
+  },
+  methods: {
+    openModal(): void {
+      const modal = document.getElementById(this.modalId);
+      if (modal) {
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden", "false");
+      }
+    },
   },
   setup(props) {
     const getDescription = computed(() => {

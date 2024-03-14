@@ -17,8 +17,6 @@
         date="Moral"
         budget="Fisica"
       >
-        <!-- Agregar el modal dentro de la tarjeta -->
-        <KTModalCard buttonText="Ver Pasos" modalId="modal1" />
       </KTCard>
     </div>
     <!--end::Col-->
