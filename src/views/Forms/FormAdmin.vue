@@ -81,30 +81,31 @@
                         v-for="(opcion, opcIndex) in question.opciones"
                         :key="opcIndex"
                       >
-                        <input
-                          type="radio"
-                          :id="'opcion-' + index + '-' + opcIndex"
-                          :value="opcion.valor"
-                          v-model="questions[index].opciones"
-                        />
-                        <label :for="'opcion-' + index + '-' + opcIndex">{{
-                          opcion.nombre
-                        }}</label>
-                        <button
-                          type="button"
-                          @click="addOption(index)"
-                          class="btn btn-outline-success btn-sm ms-2"
-                        >
-                          Agregar Opción
-                        </button>
-                        <button
-                          type="button"
-                          @click="removeOption(index, opcIndex)"
-                          class="btn btn-outline-danger btn-sm ms-2"
-                        >
-                          Eliminar Opción
-                        </button>
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            :id="'opcion-' + index + '-' + opcIndex"
+                            :value="opcion.valor"
+                            v-model="question.opciones[opcIndex].valor"
+                            class="form-control"
+                            placeholder="Opción"
+                          />
+                          <button
+                            type="button"
+                            @click="removeOption(index, opcIndex)"
+                            class="btn btn-outline-danger"
+                          >
+                            Eliminar opcion
+                          </button>
+                        </div>
                       </div>
+                      <button
+                        type="button"
+                        @click="addOption(index)"
+                        class="btn btn-outline-success mt-2"
+                      >
+                        Agregar Opción
+                      </button>
                     </div>
                   </div>
                   <div class="col-md-4">
