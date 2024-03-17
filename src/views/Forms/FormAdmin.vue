@@ -58,11 +58,11 @@
                 :key="index"
                 class="mb-3"
               >
-                <label :for="'question-' + index" class="form-label"
-                  >Pregunta {{ index + 1 }}:</label
-                >
                 <div class="row">
                   <div class="col-md-8 col-12">
+                    <label :for="'question-' + index" class="form-label"
+                      >Pregunta {{ index + 1 }}:</label
+                    >
                     <input
                       v-if="question.tipo === 'text'"
                       type="text"
@@ -87,11 +87,21 @@
                         :key="opcIndex"
                       >
                         <input
-                          type="text"
+                          type="radio"
                           :id="'opcion-' + index + '-' + opcIndex"
-                          :value="opcion"
-                          v-model="questions[index].opciones[opcIndex]"
+                          :value="opcion.valor"
+                          v-model="questions[index].opciones"
                         />
+                        <label :for="'opcion-' + index + '-' + opcIndex">{{
+                          opcion.nombre
+                        }}</label>
+                        <button
+                          type="button"
+                          @click="addOption(index)"
+                          class="btn btn-outline-success btn-sm ms-2"
+                        >
+                          Agregar Opción
+                        </button>
                         <button
                           type="button"
                           @click="removeOption(index, opcIndex)"
@@ -100,23 +110,17 @@
                           Eliminar Opción
                         </button>
                       </div>
-                      <button
-                        type="button"
-                        @click="addOption(index)"
-                        class="btn btn-outline-success btn-sm ms-2"
-                      >
-                        Agregar Opción
-                      </button>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="mb-3">
                       <label for="tipoPregunta" class="form-label"
-                        >Tipo de Pregunta:</label
+                        >Tipo de Pregunta</label
                       >
                       <select
                         v-model="questions[index].tipo"
                         @change="updateQuestionType(index, $event.target.value)"
+                        class="form-select"
                       >
                         <option value="text">Texto</option>
                         <option value="OpcionMultiple">Opción múltiple</option>
@@ -128,7 +132,7 @@
                 <button
                   type="button"
                   @click="removeQuestion(index)"
-                  class="btn btn-outline-danger btn-sm ms-2"
+                  class="btn btn-danger mt-2 my-3"
                 >
                   Eliminar Pregunta
                 </button>
@@ -265,7 +269,16 @@ export default defineComponent({
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.form-select {
+  display: inline;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border-color 0.3s ease-in-out;
+}
 .form-group {
   margin-bottom: 20px;
   position: relative;
@@ -274,7 +287,7 @@ export default defineComponent({
 .form-label {
   font-weight: bold;
   margin-bottom: 8px;
-  display: block;
+  display: inline-block;
   color: #333;
 }
 

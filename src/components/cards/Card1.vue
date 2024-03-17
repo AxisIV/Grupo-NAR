@@ -6,7 +6,11 @@
         <span class="fs-3 fw-semibold my-2">{{ title }}</span>
       </div>
       <div class="col-md-5">
-        <button
+        <KTModalCard
+          button-text="Ver más"
+          modalId="kt_modal_create_app"
+        ></KTModalCard>
+        <!-- <button
           type="button"
           class="btn btn-primary"
           data-bs-toggle="modal"
@@ -18,12 +22,11 @@
           "
         >
           Ver
-        </button>
+        </button> -->
         <!-- Usar el componente Modal -->
-        <Modal :modalId="modalId" :title="modalTitle">
-          <!-- Contenido del modal -->
+        <!-- <Modal :modalId="modalId" :title="modalTitle">
           <p>Contenido del modal aquí...</p>
-        </Modal>
+        </Modal> -->
       </div>
     </div>
 
@@ -71,10 +74,11 @@
 <script lang="ts">
 import { computed, defineComponent } from "vue";
 import Modal from "../../views/Modals/MyModal.vue";
+import KTModalCard from "@/components/cards/Card.vue";
 
 export default defineComponent({
   name: "card-1",
-  components: { Modal },
+  components: { Modal, KTModalCard },
   props: {
     status: String,
 

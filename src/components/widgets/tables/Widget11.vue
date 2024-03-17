@@ -112,7 +112,7 @@
               <thead>
                 <tr class="fw-bold text-muted bg-light">
                   <th class="ps-4 min-w-325px rounded-start">Folio</th>
-                  <th class="min-w-125px">Personaaa</th>
+                  <th class="min-w-125px">Persona</th>
                   <th class="min-w-125px">Fecha Inicio</th>
                   <th class="min-w-200px">Último cambio</th>
                   <th class="min-w-150px">Status</th>
